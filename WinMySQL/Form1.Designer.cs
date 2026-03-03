@@ -64,6 +64,7 @@
             materiasToolStripMenuItem.Name = "materiasToolStripMenuItem";
             materiasToolStripMenuItem.Size = new Size(180, 22);
             materiasToolStripMenuItem.Text = "Materias";
+            materiasToolStripMenuItem.Click += materiasToolStripMenuItem_Click;
             // 
             // alumnosToolStripMenuItem
             // 
