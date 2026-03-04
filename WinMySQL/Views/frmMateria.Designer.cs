@@ -33,6 +33,8 @@
             txtMateria = new TextBox();
             txtCveOficial = new TextBox();
             btnAceptar = new Button();
+            label3 = new Label();
+            txtCreditos = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -69,7 +71,7 @@
             // 
             // btnAceptar
             // 
-            btnAceptar.Location = new Point(218, 89);
+            btnAceptar.Location = new Point(227, 112);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(106, 43);
             btnAceptar.TabIndex = 4;
@@ -77,11 +79,29 @@
             btnAceptar.UseVisualStyleBackColor = true;
             btnAceptar.Click += btnAceptar_Click;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(36, 126);
+            label3.Name = "label3";
+            label3.Size = new Size(51, 15);
+            label3.TabIndex = 5;
+            label3.Text = "Creditos";
+            // 
+            // txtCreditos
+            // 
+            txtCreditos.Location = new Point(36, 144);
+            txtCreditos.Name = "txtCreditos";
+            txtCreditos.Size = new Size(149, 23);
+            txtCreditos.TabIndex = 6;
+            // 
             // frmMateria
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(367, 171);
+            ClientSize = new Size(367, 186);
+            Controls.Add(txtCreditos);
+            Controls.Add(label3);
             Controls.Add(btnAceptar);
             Controls.Add(txtCveOficial);
             Controls.Add(txtMateria);
@@ -100,5 +120,7 @@
         private TextBox txtMateria;
         private TextBox txtCveOficial;
         private Button btnAceptar;
+        private Label label3;
+        private TextBox txtCreditos;
     }
 }

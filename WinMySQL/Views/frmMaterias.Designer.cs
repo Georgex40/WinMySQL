@@ -68,6 +68,7 @@
             btnAgregar.TabIndex = 2;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // txtMateria
             // 
@@ -87,10 +88,13 @@
             // 
             // dgvMaterias
             // 
+            dgvMaterias.AllowUserToAddRows = false;
+            dgvMaterias.AllowUserToDeleteRows = false;
             dgvMaterias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvMaterias.Dock = DockStyle.Fill;
             dgvMaterias.Location = new Point(0, 0);
             dgvMaterias.Name = "dgvMaterias";
+            dgvMaterias.ReadOnly = true;
             dgvMaterias.Size = new Size(800, 360);
             dgvMaterias.TabIndex = 0;
             // 
@@ -102,6 +106,7 @@
             Controls.Add(splitContainer1);
             Name = "frmMaterias";
             Text = "Materias";
+            Activated += frmMaterias_Activated;
             Load += frmMaterias_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
