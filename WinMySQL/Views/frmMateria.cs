@@ -25,6 +25,7 @@ namespace WinMySQL.Views
             txtMateria.Text = materia;
             txtCveOficial.Text = cveOficial;
             txtCreditos.Text = creditos.ToString();
+            updating = true;
 
         }
 
@@ -48,8 +49,8 @@ namespace WinMySQL.Views
             else
             {
                 bool resultado = dt.ejecutarComando(
-                    $"Update Materias set Materias='{txtMateria.Text}',cveoficial='{txtCveOficial.Text}',Creditos='{txtCreditos.Text}' " +
-                    $"where id={id}");
+                    $"Update Materias set Materias='{txtMateria.Text}',Creditos='{txtCreditos.Text}',cveoficial='{txtCveOficial.Text}' " +
+                    $"where idMaterias={id}");
                 if (resultado)
                 {
                     MessageBox.Show("Materia actualizada correctamente");

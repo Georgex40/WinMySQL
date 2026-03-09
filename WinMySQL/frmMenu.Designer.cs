@@ -71,21 +71,23 @@
             alumnosToolStripMenuItem.Name = "alumnosToolStripMenuItem";
             alumnosToolStripMenuItem.Size = new Size(180, 22);
             alumnosToolStripMenuItem.Text = "Alumnos";
+            alumnosToolStripMenuItem.Click += alumnosToolStripMenuItem_Click;
             // 
             // profesoresToolStripMenuItem
             // 
             profesoresToolStripMenuItem.Name = "profesoresToolStripMenuItem";
             profesoresToolStripMenuItem.Size = new Size(180, 22);
             profesoresToolStripMenuItem.Text = "Profesores";
+            profesoresToolStripMenuItem.Click += profesoresToolStripMenuItem_Click;
             // 
-            // Form1
+            // frmMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(mnPrincipal);
             MainMenuStrip = mnPrincipal;
-            Name = "Form1";
+            Name = "frmMenu";
             Text = "Sistema Escolar";
             mnPrincipal.ResumeLayout(false);
             mnPrincipal.PerformLayout();
