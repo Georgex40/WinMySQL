@@ -36,6 +36,8 @@
             dgvAlumnos = new DataGridView();
             cmsAlumno = new ContextMenuStrip(components);
             eliminarToolStripMenuItem = new ToolStripMenuItem();
+            btnImportar = new Button();
+            ofdExcel = new OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -53,6 +55,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.Controls.Add(btnImportar);
             splitContainer1.Panel1.Controls.Add(btnAgregar);
             splitContainer1.Panel1.Controls.Add(textBox1);
             splitContainer1.Panel1.Controls.Add(label1);
@@ -119,6 +122,20 @@
             eliminarToolStripMenuItem.Text = "Eliminar";
             eliminarToolStripMenuItem.Click += eliminarToolStripMenuItem_Click;
             // 
+            // btnImportar
+            // 
+            btnImportar.Location = new Point(545, 33);
+            btnImportar.Name = "btnImportar";
+            btnImportar.Size = new Size(89, 30);
+            btnImportar.TabIndex = 3;
+            btnImportar.Text = "Importar";
+            btnImportar.UseVisualStyleBackColor = true;
+            btnImportar.Click += btnImportar_Click;
+            // 
+            // ofdExcel
+            // 
+            ofdExcel.FileName = "openFileDialog1";
+            // 
             // frmAlumnos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -148,5 +165,7 @@
         private Label label1;
         private ContextMenuStrip cmsAlumno;
         private ToolStripMenuItem eliminarToolStripMenuItem;
+        private Button btnImportar;
+        private OpenFileDialog ofdExcel;
     }
 }

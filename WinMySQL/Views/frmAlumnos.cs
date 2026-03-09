@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OfficeOpenXml;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using WinMySQL.Clases;
+
 
 namespace WinMySQL.Views
 {
@@ -48,7 +50,7 @@ namespace WinMySQL.Views
         private void dgvAlumnos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
-  
+
         }
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,5 +84,42 @@ namespace WinMySQL.Views
       );
             alumno.ShowDialog();
         }
-    }
-}
+
+        private void btnImportar_Click(object sender, EventArgs e)
+        {
+            String path;
+            DialogResult dr=ofdExcel.ShowDialog();
+            if (dr == DialogResult.OK) {
+                path = ofdExcel.FileName;
+                ExcelPackage.License.SetNonCommercialPersonal("<Jorge>");
+                using (var package = new ExcelPackage(new FileInfo(path)))
+                {
+                    ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
+                    int colcount = worksheet.Dimension.Columns;
+                    int rowCount = worksheet.Dimension.Rows;
+                    DataTable ds = new DataTable();
+                    for (int col = 1; col <= colcount; col++)
+                    {
+                        ds.Columns.Add(worksheet.Cells[1, col].Value.ToString());
+                    }
+                    for (int row = 2; row <= rowCount; row++)
+                    {
+                        DataRow dsNew = ds.NewRow();
+                        for (int col = 1; col <= colcount; col++)
+                        {
+                            dsNew[col - 1] = worksheet.Cells[row, col].Value.ToString();
+                        }
+                        ds.Rows.Add(dsNew);
+                        String comand = $"insert into alumnos(no_control,nombre,appat,apmat,telefono)" +
+                            $"values ('{dsNew.ItemArray[0]}','{dsNew.ItemArray[1]}','{dsNew.ItemArray[2]}','{dsNew.ItemArray[3]}','{dsNew.ItemArray[4]}')";
+
+                    }
+                    }
+
+                }
+            }
+        }
+     }
+ 
+
+
