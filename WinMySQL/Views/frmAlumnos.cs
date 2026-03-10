@@ -110,14 +110,17 @@ namespace WinMySQL.Views
                             dsNew[col - 1] = worksheet.Cells[row, col].Value.ToString();
                         }
                         ds.Rows.Add(dsNew);
-                        String comand = $"insert into alumnos(no_control,nombre,appat,apmat,telefono)" +
-                            $"values ('{dsNew.ItemArray[0]}','{dsNew.ItemArray[1]}','{dsNew.ItemArray[2]}','{dsNew.ItemArray[3]}','{dsNew.ItemArray[4]}')";
+                        String comand = $"insert into Alumnos(no_control,nombre,appat,apmat,telefono)" +
+                            $"values ('{dsNew.ItemArray[0]}','{dsNew.ItemArray[1]}','{dsNew.ItemArray[2]}','{dsNew.ItemArray[3]}',0)";
+                        datos.ejecutarComando(comand);
 
                     }
                     }
 
                 }
+            
             }
+        
         }
      }
  
