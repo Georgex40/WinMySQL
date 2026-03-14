@@ -54,7 +54,6 @@ namespace WinMySQL.Views
             frmMateria Materia = new frmMateria(
                 Convert.ToInt32(dgvMaterias.CurrentRow.Cells[0].Value),
                 dgvMaterias.CurrentRow.Cells[1].Value.ToString(),
-
                 dgvMaterias.CurrentRow.Cells[3].Value.ToString(),
                 Convert.ToInt32(dgvMaterias.CurrentRow.Cells[2].Value)
                 );
@@ -84,5 +83,6 @@ namespace WinMySQL.Views
                 }
             }
         }
+
     }
 }
